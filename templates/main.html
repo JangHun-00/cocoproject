@@ -2,12 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}">
     <title>강의 추천 프로그램</title>
 </head>
 <body>
-    <p>main</p>
-    {% block contents %}
-        abcd
-    {% endblock %}
+    <div id="banner">강의 추천 프로그램</div>
+    <div id="window">
+        <div id="menu">
+                <div class="menu_button">
+                    <a href="{{ url_for('main')}}">강의 추천</a>
+                </div>
+                <div class="menu_button">
+                    <a href="{{ url_for('graduate_table')}}">졸업 요건</a>
+                </div>
+        </div>
+        <div id="content">
+            {% block contents %}
+                <h1>추천받을 강의에 대한 정보 입력</h1>
+            {% endblock %}
+        </div>
+    </div>
 </body>
 </html>

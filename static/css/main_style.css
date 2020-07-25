@@ -1,0 +1,99 @@
+#window {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 1000px;
+    height: 800px;
+    /*
+    background-color: lemonchiffon;
+    border: 2px;
+    border-top: 4px solid black;
+    border-right: 4px solid black;
+    border-left: 4px solid black;
+    border-bottom: 4px solid black;
+    */
+    display: grid;
+    grid-template-columns: 200px 800px;
+}
+
+#banner {
+    margin: 0 auto;
+    width: 1000px;
+    height: 150px;
+    background-color: #006400;
+    border: 2px;
+    border-top: 4px solid black;
+    border-right: 4px solid black;
+    border-left: 4px solid black;
+    border-bottom: 4px solid black;
+    font-size: 60px;
+    text-align: center;
+    vertical-align: middle;
+    color:white;
+}
+
+#menu {
+    width: 180px;
+    height: 200px;
+    display: grid;
+    grid-template-rows: 100px 100px;
+    /*
+    background-color: lightcoral;
+    border: 2px;
+    border-top: 4px solid black;
+    border-right: 4px solid black;
+    border-left: 4px solid black;
+    border-bottom: 4px solid black;
+    */
+}
+
+.menu_button {
+    width: 180px;
+    height: 96px;
+    background-color: lightyellow;
+    border-top: 4px solid black;
+    border-right: 4px solid black;
+    border-left: 4px solid black;
+    border-bottom: 4px solid black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#content {
+    width: 800px;
+    height: 800px;
+    display: grid;
+    background-color: lightgreen;
+    border: 2px;
+    border-top: 4px solid black;
+    border-right: 4px solid black;
+    border-left: 4px solid black;
+    border-bottom: 4px solid black;
+}
+
+@media(max-width:1000px){
+    #window {
+        width: auto;
+        height: 910px;
+        grid-template-rows: 110px 800px;
+        grid-template-columns: none;
+    }
+
+    #banner {
+        width: auto;
+    }
+
+    #menu {
+        width: auto;
+        height: 100px;
+        grid-template-rows: 50px 50px;
+    }
+
+    .menu_button {
+        width: auto;
+        height: 46px;
+    }
+
+    #content {
+        width: auto;
+    }
+}

@@ -19,7 +19,9 @@ def graduate_table():
     return render_template("graduate_table.html")
 
 myhost = "127.0.0.1"
-myport = 5000
+myport = 5016
+app.debug = True
+# 127.0.0.1:5000
 
 if __name__ == "__main__":
     app.run(host=myhost, port=myport)
