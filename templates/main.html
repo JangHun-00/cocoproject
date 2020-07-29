@@ -3,24 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
     <title>강의 추천 프로그램</title>
 </head>
 <body>
-    <div id="banner">강의 추천 프로그램</div>
-    <div id="window">
-        <div id="menu">
-                <div class="menu_button">
-                    <a href="{{ url_for('main')}}">강의 추천</a>
+    <div id="top">
+            <div id="banner">
+                <div style="margin: auto 0;font-family: 'Times New Roman', Times, serif; font-size: 40px;">Learning SKKU</div>
+                <div></div>
+                <div class="menu_button"><a href="{{ url_for('main')}}">강의 추천</a></div>
+                <div class="menu_button"><a href="{{ url_for('graduate_table')}}">졸업 요건</a></div>
+            </div>
+    </div>
+    <div id="content">
+        {% block contents %}
+            <h1>추천받을 강의에 대한 정보 입력</h1>
+            <form method="GET" action="/result">
+                <div id="major">
+                    <select id="major1" name="major1" onchange="major1Click(this.value)" required>
+                        <option value="" selected disabled>전공/영역 대단위</option>
+                        <option value="교양/기타">교양/기타</option>
+                        <option value="경영대학">경영대학</option>
+                        <option value="경제대학">경제대학</option>
+                        <option value="공과대학">공과대학</option>
+                        <option value="동아시아학술원">동아시아학술원</option>
+                        <option value="문과대학">문과대학</option>
+                        <option value="법과대학">법과대학</option>
+                        <option value="사범대학">사범대학</option>
+                        <option value="사회과학대학">사회과학대학</option>
+                        <option value="생명공학대학">생명공학대학</option>
+                        <option value="성균나노과학기술원">성균나노과학기술원</option>
+                        <option value="성균융합원">성균융합원</option>
+                        <option value="소프트웨어대학">소프트웨어대학</option>
+                        <option value="스포츠과학대학">스포츠과학대학</option>
+                        <option value="약학대학">약학대학</option>
+                        <option value="예술대학">예술대학</option>
+                        <option value="유학대학">유학대학</option>
+                        <option value="자연과학대학">자연과학대학</option>
+                        <option value="정보통신대학">정보통신대학</option>
+                        <option value="학부대학">학부대학</option>
+                    </select>
+                    <select id="major2" name="major2" required>
+                        <option value="" selected disabled>전공/영역 소단위</option>
+                    </select>
                 </div>
-                <div class="menu_button">
-                    <a href="{{ url_for('graduate_table')}}">졸업 요건</a>
+                <div class="main_radio" id="homework">
+                    과제량: 
+                    <label>
+                        <input type="radio" name="homework_value" value="많음" required>
+                        많음
+                    </label>
+                    <label>
+                        <input type="radio" name="homework_value" value="보통">
+                        보통
+                    </label>
+                    <label>
+                        <input type="radio" name="homework_value" value="적음">
+                        적음
+                    </label>
+                    <label>
+                        <input type="radio" name="homework_value" value="상관없음">
+                        상관 없음
+                    </label>
                 </div>
-        </div>
-        <div id="content">
-            {% block contents %}
-                <h1>추천받을 강의에 대한 정보 입력</h1>
-            {% endblock %}
-        </div>
+                <div class="main_radio" id="teamwork">
+                    조모임: 
+                    <label>
+                        <input type="radio" name="teamwork_value" value="많음" required>
+                        많음
+                    </label>
+                    <label>
+                        <input type="radio" name="teamwork_value" value="보통">
+                        보통
+                    </label>
+                    <label>
+                        <input type="radio" name="teamwork_value" value="없음">
+                        없음
+                    </label>
+                    <label>
+                        <input type="radio" name="teamwork_value" value="상관없음">
+                        상관 없음
+                    </label>
+                </div>
+                <div class="main_radio" id="grade">
+                    학점 비율: 
+                    <label>
+                        <input type="radio" name="grade_value" value="학점느님" required>
+                        학점느님
+                    </label>
+                    <label>
+                        <input type="radio" name="grade_value" value="비율채워줌">
+                        비율 채워줌
+                    </label>
+                    <label>
+                        <input type="radio" name="grade_value" value="깐깐">
+                        깐깐
+                    </label>
+                    <label>
+                        <input type="radio" name="grade_value" value="상관없음">
+                        상관 없음
+                    </label>
+                </div>
+                <div class="main_radio" id="numoftest">
+                    시험 횟수: 
+                    <label>
+                        <input type="radio" name="numoftest_value" value="3번이상" required>
+                        3번 이상
+                    </label>
+                    <label>
+                        <input type="radio" name="numoftest_value" value="2번">
+                        2번
+                    </label>
+                    <label>
+                        <input type="radio" name="numoftest_value" value="1번이하">
+                        1번 이하
+                    </label>
+                    <label>
+                        <input type="radio" name="numoftest_value" value="상관없음">
+                        상관 없음
+                    </label>
+                </div>
+                <div id="emptylecture">
+                    <label>
+                        <input type="checkbox" name="emptylecture_value" value="빈강의추가">
+                        신설 강의 정보도 표시
+                    </label>
+                </div>
+                <div id="timeban_btn">
+                    <button type="button" id="modal_open_btn" onclick="modalOpen()">안 되는 시간 추가하기</button>
+                </div>
+                <div id="modal">
+                    <div class="modal_content">
+                        안 되는 시간 입력
+                        <div id="timeban">
+
+                        </div>
+                        <button type="button" id="timeban_add_btn" onclick="timebanAdd()">시간 추가하기</button>
+                        <button type="button" id="modal_close_btn" onclick="modalClose()">창 닫기</button>
+                    </div>
+                    <div class="modal_layer"></div>
+                </div>
+                <div id="submit_button">
+                    <input type="submit" value="강의 검색!">
+                </div>
+            </form>
+        {% endblock %}
     </div>
 </body>
 </html>

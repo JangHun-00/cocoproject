@@ -1,68 +1,41 @@
-#window {
-    margin: 0 auto;
-    margin-top: 30px;
-    width: 1000px;
-    height: 800px;
-    /*
-    background-color: lemonchiffon;
-    border: 2px;
-    border-top: 4px solid black;
-    border-right: 4px solid black;
-    border-left: 4px solid black;
-    border-bottom: 4px solid black;
-    */
-    display: grid;
-    grid-template-columns: 200px 800px;
+#top {
+    /* 페이지 상단의 배경 */
+    width: auto;
+    height: 125px;
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #00FA9A, #00FF00);
 }
 
 #banner {
+    /* 페이지 상단에 사이트명, 버튼이 담기는 div */
     margin: 0 auto;
     width: 1000px;
-    height: 150px;
-    background-color: #006400;
-    border: 2px;
-    border-top: 4px solid black;
-    border-right: 4px solid black;
-    border-left: 4px solid black;
-    border-bottom: 4px solid black;
-    font-size: 60px;
+    height: 125px;
+    display: grid;
+    grid-template-columns: 200px 50px 180px 180px;
     text-align: center;
     vertical-align: middle;
     color:white;
+    
 }
 
-#menu {
-    width: 180px;
-    height: 200px;
-    display: grid;
-    grid-template-rows: 100px 100px;
-    /*
-    background-color: lightcoral;
-    border: 2px;
-    border-top: 4px solid black;
-    border-right: 4px solid black;
-    border-left: 4px solid black;
-    border-bottom: 4px solid black;
-    */
+/* 페이지 상단의 연결 링크(a 태그) */
+#banner a:link { color: white; text-decoration: none;}
+#banner a:visited { color: white; text-decoration: none;}
+#banner a:hover { color: pink; text-decoration: none;}
+#banner .menu_button {
+    margin: auto 0; 
+    font-family: 'Times New Roman', Times, serif; 
+    font-size: 30px;
 }
 
-.menu_button {
-    width: 180px;
-    height: 96px;
-    background-color: lightyellow;
-    border-top: 4px solid black;
-    border-right: 4px solid black;
-    border-left: 4px solid black;
-    border-bottom: 4px solid black;
-    text-align: center;
-    vertical-align: middle;
-}
 
 #content {
-    width: 800px;
-    height: 800px;
+    /* 페이지 중간의 메인 컨텐츠 */
+    margin: 0 auto;
+    width: 1000px;
+    height: 1000px;
     display: grid;
-    background-color: lightgreen;
     border: 2px;
     border-top: 4px solid black;
     border-right: 4px solid black;
@@ -70,27 +43,47 @@
     border-bottom: 4px solid black;
 }
 
-@media(max-width:1000px){
-    #window {
-        width: auto;
-        height: 910px;
-        grid-template-rows: 110px 800px;
-        grid-template-columns: none;
-    }
+#modal {
+    display: none;
+    position:relative;
+    width:100%;
+    height:100%;
+    z-index:1;
+  }
+  
+  #modal h2 {
+    margin:0;   
+  }
+  
+  #modal button {
+    display:inline-block;
+    width:120px;
+    margin-left:calc(100% - 100px - 10px);
+  }
+  
+  #modal .modal_content {
+    width:300px;
+    margin:100px auto;
+    padding:20px 10px;
+    background:#fff;
+    border:2px solid #666;
+  }
+  
+  #modal .modal_layer {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0, 0, 0, 0.5);
+    z-index:-1;
+  } 
 
+@media(max-width:1000px){
+    /* 모바일 환경(가로 길이 1000px 이하) */
     #banner {
         width: auto;
-    }
-
-    #menu {
-        width: auto;
-        height: 100px;
-        grid-template-rows: 50px 50px;
-    }
-
-    .menu_button {
-        width: auto;
-        height: 46px;
+        grid-template-rows: 2fr 1fr 1fr;
     }
 
     #content {

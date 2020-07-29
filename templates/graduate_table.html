@@ -1,5 +1,40 @@
 {% extends "main.html" %}
 
 {% block contents %}
-    <h1>졸업요건 표 이미지</h1>
+    소속대학별 졸업요건 
+    <div>
+        <select id="graduate_class" name="graduate_class">
+            <option value="" selected disabled>소속 학번</option>
+            <option value="20">2020학번</option>
+            <option value="16~19">2016~19학번</option>
+        </select>
+        <select id="graduate_major" name="graduate_major">
+            <option value="" selected disabled>소속 대학</option>
+            <option value="유학">유학대학</option>
+            <option value="문과">문과대학</option>
+            <option value="사회과학">사회과학대학</option>
+            <option value="경제">경제대학</option>
+            <option value="경영">경영대학</option>
+            <option value="사범1">사범대학(교육, 한교)</option>
+            <option value="예술">예술대학</option>
+            <option value="자연과학">자연과학대학</option>
+            <option value="생명공학">생명공학대학</option>
+            <option value="정보통신1">정보통신대학(전기전자)</option>
+            <option value="정보통신2">정보통신대학(반도체)</option>
+            <option value="소프트웨어">소프트웨어대학</option>
+            <option value="공과">공과대학</option>
+            <option value="융합원">성균융합원(글바메)</option>
+            <option value="사범2">사범대학(수교, 컴교)</option>
+            <option value="건축">건축학과</option>
+            <option value="약학">약학대학</option>
+            <option value="스포츠과학">스포츠과학대학</option>
+            <option value="의과">의과대학</option>
+            <option value="글로벌융합학부">글로벌융합학부</option>
+        </select>
+        <button type="button" id="graduate_result_btn" onclick="graduateResult()">졸업요건 확인하기</button>
+    </div>
+    <div id="graduate_result">
+
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/graduate_table.js') }}"></script>
 {% endblock %}
