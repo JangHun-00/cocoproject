@@ -8,12 +8,12 @@
 </head>
 <body>
     <div id="top">
-            <div id="banner">
-                <div style="margin: auto 0;font-family: 'Times New Roman', Times, serif; font-size: 40px;">Learning SKKU</div>
-                <div></div>
-                <div class="menu_button"><a href="{{ url_for('main')}}">강의 추천</a></div>
-                <div class="menu_button"><a href="{{ url_for('graduate_table')}}">졸업 요건</a></div>
-            </div>
+        <div id="banner">
+            <div style="margin: auto 0;font-family: 'Times New Roman', Times, serif; font-size: 40px;">Learning SKKU</div>
+            <div></div>
+            <div class="menu_button"><a href="{{ url_for('main')}}">강의 추천</a></div>
+            <div class="menu_button"><a href="{{ url_for('graduate_table')}}">졸업 요건</a></div>
+        </div>
     </div>
     <div id="content">
         {% block contents %}
