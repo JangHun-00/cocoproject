@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, url_for
 import pandas as pd
+import pickle
 
 app = Flask(__name__)
 
@@ -48,15 +49,18 @@ def result():
                 if (check_time[1][0] - check_time[0][0]) * 60 + (check_time[1][1] - check_time[0][1]) > 0:
                     time.append((tmp_list[0] + " " + tmp_list[1], tmp_list[0] + " " + tmp_list[2]))
         #pandas_result = calculate_score(major1, major2, homework, teamwork, grade, numoftest, empty, time)
-        print(major1, major2, homework, teamwork, grade, numoftest, empty, time)
-        return render_template("result.html")
+        #print(major1, major2, homework, teamwork, grade, numoftest, empty, time)
+        df = pickle.load(open('df_01_16.p', 'rb'))
+        new_df = df
+        length = len(df)
+        return render_template("result.html", df = df, new_df = new_df, length = length, new_length = length)
 
 @app.route('/graduate_table')
 def graduate_table():
     return render_template("graduate_table.html")
 
 myhost = "127.0.0.1"
-myport = 5007
+myport = 5020
 app.debug = True
 # 127.0.0.1:5000
 

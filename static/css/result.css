@@ -1,0 +1,59 @@
+.upto5 {
+    display: table-row;
+}
+
+.upto10 {
+    display: none;
+}
+
+.upto15 {
+    display: none;
+}
+
+.upto20 {
+    display: none;
+}
+
+.upto25 {
+    display: none;
+}
+
+.upto30 {
+    display: none;
+}
+
+#new_info_modal {
+    display: none;
+    position: relative;
+    width:100%;
+    height:100%;
+    z-index:1;
+  }
+  
+#new_info_modal h2 {
+    margin:0;   
+  }
+  
+#new_info_modal button {
+    display:inline-block;
+    width:120px;
+    margin-left:calc(100% - 100px - 10px);
+  }
+  
+#new_info_modal .modal_content {
+    width:300px;
+    margin:100px auto;
+    padding:20px 10px;
+    background:#fff;
+    border:2px solid #666;
+  }
+  
+#new_info_modal .modal_layer {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0, 0, 0, 0.5);
+    z-index:-1;
+  }
