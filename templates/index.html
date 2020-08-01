@@ -1,10 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <meta charset="UTF-8">
     <title>abcd</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="index.css"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+    <script src="jquery-3.5.1.min.js"></script>
+
+    <style>
+        
+        /*background: #a8ff78;  /*fallback for old browsers */
+/*background: -webkit-linear-gradient(to right, #99ffd8, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+/*background: linear-gradient(to right, #99ffd8, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+#banner{
+    background-position: top;
+background-attachment: fixed;
+background-repeat: no-repeat;
+padding: 15em 0 7em 0;
+height: 70%;
+/* background-size: cover; */
+background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+animation: rainbow 5s infinite alternate;
+/* background:   linear-gradient(to right,#00ffbf,#2eff3f); */
+background:  #8cff5f;
+animation-name: bgcolor;
+/* animation: rainbow 5s infinite alternate; */
+animation-duration: 15s;
+/* linear-gradient(to right, #99ffd8, #a8ff78); */
+}   
+    
+    @keyframes bgcolor {
+        0%{
+            /* background-color: #c1fd9f; */
+            background-color: #76fc65;
+        }
+        /* 50%{
+            background-color: #95fad3;
+        } */
+        100%{
+            /* background-color: #5cfde8; */
+            background-color: #00c3ff;
+        }
+        /* 0%{
+            background-color: #8cff5f;
+            
+        }
+        10%{
+            background-color: #5fff5f;
+        }
+        20%{
+            background-color: #5fff94;
+        }
+        30%{
+            background-color: #5fffca;
+        }
+        40%{
+            background-color: #5fffff;
+        }
+        50%{
+            background-color:#5fecff;
+        }
+        60%{
+            background-color: #5fdaff;
+        }
+        70%{
+            background-color :#5fccff;
+        }
+        80%{
+            background-color :#5fbfff;
+        }
+        90%{
+            background-color :#5faaff;
+        }
+        100%{
+            background-color :#5f97ff;
+        } */
+    }
+        
+        #banner h1 {
+			font-family:Baskerville Old Face;
+			text-indent: 30%;
+			font-size: 5em;
+			font-weight: 100;
+			color: rgb(252, 252, 252);
+			line-height: 1em;
+            /* margin: 0 0 0.1em 0; */
+            /* margin-left: 20%; */
+			padding: 0;
+        }
+        #emoticon{
+            position:absolute;
+            width: 200px;
+            height: 200px;
+            top:50px;
+            right: 100px;
+        }
+        h2{
+            color:rgb(195, 255, 193);
+            margin-top:10px;
+            margin-left:30px;
+            position:absolute;
+        }
+        h5{
+            position:absolute;
+            right:30px;
+            top:20px;
+            color:#ffffff;
+        }
+        .btn{
+            height: 100px;
+            width: 50%;
+            margin-top:50px;
+            margin-left: 25%;
+            color:palevioletred;
+        }
+        .btn2{
+            text-align:"center";
+        }
+        #footer .inner {
+		border-top: 1px solid #dbdbdb;
+		padding-top: 10px;
+	}
+
+	#footer .copyright {
+		color: #bbb;
+		font-size: 0.8em;
+		margin: 0 0 0 30px;
+		padding: 0;
+	}
+
+		#footer .copyright a {
+			color: #bbb;
+			text-decoration: none;
+		}
+
+			#footer .copyright a:hover {
+				color: #bbb;
+				text-decoration: underline;
+			}
+
+	#footer ul.icons li .icon {
+		font-size: 0.58em;
+	}
+    h6{
+        color:#ffffff;
+        margin-left:50px;
+        font-size: 40px;
+    }
+    </style>
+    <script>
+$(document).ready(function(){
+    $("#more").mouseover(function(){
+        $(".title").fadeOut("slow");
+        $("#mores").fadeIn("slow");
+    });
+    $("#more").mouseout(function(){
+        $("#mores").fadeOut("slow");
+        $(".title").fadeIn("slow");
+        
+    });
+});
+    </script>
 </head>
 <body>
+    <h2>Home</h2>
+
+    <h5 style="right: 50px" id="more">more about page</h3>
+    
+    <section id="banner" class="banners">
+        
+    <!-- <img src="../static/images/emoticon.gif" id="emoticon"> -->
+    
+        
+        <h1 class="title" id="titles">Learning SKKU</h1>
+        <h6 style="display:none;" id="mores">
+        Learning SKKU는 수없이 많은 과목 중
+        <br>당신에게 가장 적합한 수업을
+        <br>추천해주는 사이트입니다
+        </h6>
+    </section>
+    <div class="btn2">
+    <button type="button" class="btn btn-outline-info" text-align="center">강의보러가기</button>
+</div>
+<br><br><br>
+<footer id="footer">
+    <div class="inner">
+        <div class="flex">
+            <div class="copyright">
+            
+            </br>
+               Made by COCO (한승희, 장훈, 박태희)
+               <br>정보 출처 : 에브리타임 | |   문의 : abcd@gmail.com
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" src="index.js"></script>
 
 </body>
 </html>

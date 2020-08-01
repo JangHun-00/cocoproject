@@ -1,92 +1,112 @@
-#top {
-    /* 페이지 상단의 배경 */
-    width: auto;
-    height: 125px;
-    margin-bottom: 30px;
-    background: linear-gradient(to right, #00FA9A, #00FF00);
-}
-
-#banner {
-    /* 페이지 상단에 사이트명, 버튼이 담기는 div */
-    margin: 0 auto;
-    width: 1000px;
-    height: 125px;
-    display: grid;
-    grid-template-columns: 200px 50px 180px 180px;
-    text-align: center;
-    vertical-align: middle;
-    color:white;
-    
-}
-
-/* 페이지 상단의 연결 링크(a 태그) */
-#banner a:link { color: white; text-decoration: none;}
-#banner a:visited { color: white; text-decoration: none;}
-#banner a:hover { color: pink; text-decoration: none;}
-#banner .menu_button {
-    margin: auto 0; 
-    font-family: 'Times New Roman', Times, serif; 
-    font-size: 30px;
-}
 
 
 #content {
-    /* 페이지 중간의 메인 컨텐츠 */
-    margin: 0 auto;
-    width: 1000px;
-    height: 1000px;
-    display: grid;
-    border: 2px;
-    border-top: 4px solid black;
-    border-right: 4px solid black;
-    border-left: 4px solid black;
-    border-bottom: 4px solid black;
+  /* 페이지 중간의 메인 컨텐츠 */
+  margin: 0 auto;
+  width: 85%;
+  height: auto;
+  display: grid;
+  /* margin-left: 15%;
+  /* text-align: center; */
+  
+  font-size: 25px;
+  /* border: 2px; */
+  /* border-top: 4px solid black;
+  border-right: 4px solid black;
+  border-left: 4px solid black;
+  border-bottom: 4px solid black; */
 }
 
 #modal {
-    display: none;
-    position:relative;
-    width:100%;
-    height:100%;
-    z-index:1;
-  }
-  
-  #modal h2 {
-    margin:0;   
-  }
-  
-  #modal button {
-    display:inline-block;
-    width:120px;
-    margin-left:calc(100% - 100px - 10px);
-  }
-  
-  #modal .modal_content {
-    width:300px;
-    margin:100px auto;
-    padding:20px 10px;
-    background:#fff;
-    border:2px solid #666;
-  }
-  
-  #modal .modal_layer {
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0, 0, 0, 0.5);
-    z-index:-1;
-  } 
+  display: none;
+  position: absolute;
+  width:100%;
+  height:100%;
+  z-index:1;
+}
+
+#modal h2 {
+  margin:0;   
+}
+
+#modal button {
+  display:inline-block;
+  width:110px;
+  margin-left:calc(100% - 100px - 10px);
+}
+
+#modal .modal_content {
+  width:460px;
+  margin:100px auto;
+  padding:20px 10px;
+  background:#fff;
+  border:2px solid #666;
+  position: absolute;
+  margin-top:-500px;
+  margin-left:10%;
+  font-family: HY목각파임B;
+}
+
+#modal .modal_layer {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0, 0.5);
+  z-index:-1;
+} 
+
+#timeban{
+    margin-top:10px;
+}
 
 @media(max-width:1000px){
-    /* 모바일 환경(가로 길이 1000px 이하) */
-    #banner {
-        width: auto;
-        grid-template-rows: 2fr 1fr 1fr;
-    }
+  /* 모바일 환경(가로 길이 1000px 이하) */
+  #banner {
+      width: 100%;
+      /* grid-template-rows: 1fr 2fr 1fr; */
+  }
 
-    #content {
-        width: auto;
-    }
+}
+select{
+  border:none;
+}
+#major{
+  background-color: white;
+  width: 100%;
+  /* height: 50px; */
+  border-radius: 10px;
+  margin-bottom: 20px;
+  
+  /* display: table; */
+  /* text-align: center; */
+  /* vertical-align: middle; */
+  /* margin-left: 20px; */
+}
+#major1{
+  width: auto;
+  height: 50px;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-size: 27px;
+  font-family: HY견고딕;
+  /* background-color: rgb(165, 221, 198); */
+}
+#major2{
+  width: auto;
+  height: 50px;
+  margin-left: 30px;
+  font-size: 27px;
+  font-family: HY견고딕;
+  /* background-color: rgb(170, 255, 220); */
+}
+.select-selected{
+  background-color: darkgreen;
+}
+body{
+  background-color: rgb(252, 253, 232);
+  /* background-color: rgb(233, 255, 247); */
+  margin:0px
 }

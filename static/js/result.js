@@ -8,7 +8,7 @@ function showChange(num){
         }
     }
     for(var j = real_num + 5; j <= 30; j += 5){
-        var childs = document.getElementsByClassName("upto"+i.toString(10));
+        var childs = document.getElementsByClassName("upto"+j.toString(10));
         for(l = 0; l < childs.length; l++) {
             childs[l].style.display = 'none';
         }

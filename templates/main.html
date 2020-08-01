@@ -2,23 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
-    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/banner.css') }}">
     <title>강의 추천 프로그램</title>
 </head>
 <body>
     <div id="top">
-        <div id="banner">
-            <div style="margin: auto 0;font-family: 'Times New Roman', Times, serif; font-size: 40px;">Learning SKKU</div>
-            <div></div>
-            <div class="menu_button"><a href="{{ url_for('main')}}">강의 추천</a></div>
-            <div class="menu_button"><a href="{{ url_for('graduate_table')}}">졸업 요건</a></div>
-        </div>
+            <div id="banner">
+                <div style="margin: auto 0;font-family: 'Times New Roman', Times, serif; font-size: 50px;">Learning SKKU</div>
+                <div></div>
+                <div class="menu_button"><a href="{{ url_for('main')}}">강의 추천</a></div>
+                <div class="menu_button"><a href="{{ url_for('graduate_table')}}">졸업 요건</a></div>
+            </div>
     </div>
-    <div id="content">
+    <div id="content" style="width: 60%;">
         {% block contents %}
-            <h1>추천받을 강의에 대한 정보 입력</h1>
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}">
+            <!-- <h1 style="">추천받을 강의에 대한 정보 입력</h1> -->
             <form method="GET" action="/result">
                 <div id="major">
                     <select id="major1" name="major1" onchange="major1Click(this.value)" required>
@@ -48,7 +47,9 @@
                         <option value="" selected disabled>전공/영역 소단위</option>
                     </select>
                 </div>
-                <div class="main_radio" id="homework">
+                
+                <div class="content">
+                <div class="main_radio" id="homework" style="margin-bottom: 20px;">
                     과제량: 
                     <label>
                         <input type="radio" name="homework_value" value="많음" required>
@@ -67,7 +68,7 @@
                         상관 없음
                     </label>
                 </div>
-                <div class="main_radio" id="teamwork">
+                <div class="main_radio" id="teamwork" style="margin-bottom: 20px;">
                     조모임: 
                     <label>
                         <input type="radio" name="teamwork_value" value="많음" required>
@@ -86,7 +87,7 @@
                         상관 없음
                     </label>
                 </div>
-                <div class="main_radio" id="grade">
+                <div class="main_radio" id="grade" style="margin-bottom: 20px;">
                     학점 비율: 
                     <label>
                         <input type="radio" name="grade_value" value="학점느님" required>
@@ -105,7 +106,7 @@
                         상관 없음
                     </label>
                 </div>
-                <div class="main_radio" id="numoftest">
+                <div class="main_radio" id="numoftest" style="margin-bottom: 20px;">
                     시험 횟수: 
                     <label>
                         <input type="radio" name="numoftest_value" value="3번이상" required>
@@ -125,7 +126,7 @@
                     </label>
                 </div>
                 <div id="emptylecture">
-                    <label>
+                    <label style="font-size: 17px;">
                         <input type="checkbox" name="emptylecture_value" value="빈강의추가">
                         신설 강의 정보도 표시
                     </label>
@@ -144,10 +145,12 @@
                     </div>
                     <div class="modal_layer"></div>
                 </div>
-                <div id="submit_button">
-                    <input type="submit" value="강의 검색!">
+                <div id="submit_button" style="text-align: center;">
+                    <input type="submit" value="강의 검색!"style="margin-top:30px;border:none;width:170px;height:50px;color:white;background-color: yellowgreen;font-size:30px;">
                 </div>
+            </div>
             </form>
+            <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
         {% endblock %}
     </div>
 </body>

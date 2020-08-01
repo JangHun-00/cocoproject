@@ -81,7 +81,7 @@ function graduateResult(){
     else if(graduate_class == "16~19"){
         var graduate_table = document.createElement("table");
         var graduate_table2 = document.createElement("table");
-        var graduate_lecture = ["인성", "리더십", "의사소통", "창의와 사유", "소프트웨어기초", "기본영어", "전문영어+글로벌문화", "인간/문화의 이해", "사회/역사의 이해", "자연/과학/기술의 이해", "기초인문사회과학", "기초자연과학", "합계"];
+        var graduate_lecture = ["인성", "리더십", "의사소통", "창의와 사유", "소프트웨어기초", "기본영어", "전문영어+글로벌문화", "인간/문화의\n이해", "사회/역사의 이해", "자연/과학/기술의 이해", "기초 인문사회과학", "기초 자연과학", "합계"];
         var graduate_grade1 = ['2', '2', '4', '2', '4', '4', '2', '3', '3', '3', '9', '0', '38'];
         var graduate_grade2 = ['2', '2', '4', '2', '4', '4', '2', '3', '3', '3', '0', '24', '53'];
         var graduate_grade3 = ['2', '2', '4', '2', '0', '4', '2', '3', '3', '3', '0', '30', '55'];
