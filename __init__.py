@@ -60,7 +60,7 @@ def graduate_table():
     return render_template("graduate_table.html")
 
 myhost = "127.0.0.1"
-myport = 5020
+myport = 5023
 app.debug = True
 # 127.0.0.1:5000
 

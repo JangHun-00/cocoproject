@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
     <title>강의 추천 프로그램</title>
 </head>
@@ -18,6 +16,7 @@
     </div>
     <div id="content">
         {% block contents %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}">   
             <h1>추천받을 강의에 대한 정보 입력</h1>
             <form method="GET" action="/result">
                 <div id="major">

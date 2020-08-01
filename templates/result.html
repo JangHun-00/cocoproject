@@ -1,6 +1,7 @@
 {% extends "main.html" %}
 
 {% block contents %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
     <div id="result_top">
         <select id="show_how_many" onchange="showChange(this.value)">
             <option value="5" selected>상위 5개 과목 보기</option>
@@ -28,7 +29,7 @@
                                 <td>{{ row.lecture_num }}</td>
                                 <td>{{ row.lecture_name }}</td>
                                 <td>{{ row.professor }}</td>
-                                <td colspan="4">{{ row.time.replace('\n', '') }}</td>
+                                <td colspan="4">{{ row.time.replace('\n', ' ') }}</td> <!--colspan="5"-->
                             </tr>
                             <tr class="new_df_tr">
                                 <td>{{ row.credit }}</td>
@@ -49,6 +50,9 @@
                                 <td>{{ row.Teamwork }}</td>
                                 <td>{{ row.grade_ratio }}</td>
                                 <td>{{ row.exam }}</td>
+                                <!--
+                                <td>{{ row.new_info }}</td>
+                                -->
                             </tr>
                         {% endfor %}
                     </table>
@@ -65,7 +69,7 @@
             <td>학수번호</td>
             <td>교과명</td>
             <td>담당교수</td>
-            <td colspan="4">시간</td>
+            <td colspan="4">시간</td> <!--colspan="5"-->
         </tr>
         <tr>
             <td>학점</td>
@@ -76,6 +80,7 @@
             <td>조모임</td>
             <td>학점 비율</td>
             <td>시험 횟수</td>
+            <!--<td>신설 강의</td>-->
         </tr>
         
         {% for num in range(0, 30, 5) %}
@@ -93,7 +98,7 @@
                         <td>{{ row.lecture_num }}</td>
                         <td>{{ row.lecture_name }}</td>
                         <td>{{ row.professor }}</td>
-                        <td colspan="4">{{ row.time.replace('\n', '') }}</td>
+                        <td colspan="4">{{ row.time.replace('\n', ' ') }}</td> <!--colspan="5"-->
                     </tr>
                     <tr class="{{ class_name }}">
                         <td>{{ row.credit }}</td>
@@ -114,6 +119,9 @@
                         <td>{{ row.Teamwork }}</td>
                         <td>{{ row.grade_ratio }}</td>
                         <td>{{ row.exam }}</td>
+                        <!--
+                        <td>{{ row.new_info }}</td>
+                        -->
                     </tr>
                 {% endfor %}
             {% endif %}
