@@ -22,37 +22,17 @@
                         {% set end = new_length %}
                     {% endif %}
                     <table>
+                        {% set num = [] %}
                         {% for index, row in new_df[0:end].iterrows() %}
+                            {% if num.append('1') %}{% endif %}
                             <tr class="new_df_tr">
-                                <td rowspan="2">{{ index+1 }}</td>
+                                <td>{{ num|length }}</td>
                                 <td>{{ row.area }}</td>
                                 <td>{{ row.lecture_num }}</td>
                                 <td>{{ row.lecture_name }}</td>
                                 <td>{{ row.professor }}</td>
-                                <td colspan="4">{{ row.time.replace('\n', '') }}</td> <!--colspan="5"-->
-                            </tr>
-                            <tr class="new_df_tr">
                                 <td>{{ row.credit }}</td>
-                                <td>{{ row.everytime_rating }}</td>
-                                <td>
-                                    {% if row.url == "o" %}
-                                        <button onclick="window.open( '{{ row.everytime_url }}' )">에타 URL</button>
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    {% if row.note|length <= 4 %}
-                                        {{ row.note }}
-                                    {% else %}
-                                        <button onclick="alert( '{{ row.note }}' )">비고</button>
-                                    {% endif %}
-                                </td>
-                                <td>{{ row.hw }}</td>
-                                <td>{{ row.Teamwork }}</td>
-                                <td>{{ row.grade_ratio }}</td>
-                                <td>{{ row.exam }}</td>
-                                <!--
-                                <td>{{ row.new_info }}</td>
-                                -->
+                                <td colspan="5">{{ row.time.replace('\n', ' ') }}</td>
                             </tr>
                         {% endfor %}
                     </table>
@@ -69,7 +49,7 @@
             <td>학수번호</td>
             <td>교과명</td>
             <td>담당교수</td>
-            <td colspan="4">시간</td> <!--colspan="5"-->
+            <td colspan="6">시간</td>
         </tr>
         <tr>
             <td>학점</td>
@@ -80,9 +60,10 @@
             <td>조모임</td>
             <td>학점 비율</td>
             <td>시험 횟수</td>
-            <!--<td>신설 강의</td>-->
+            <td>신설 강의</td>
+            <td>환산 점수</td>
         </tr>
-        
+        {% set number = [] %}
         {% for num in range(0, 30, 5) %}
             {% set class_name = "upto{}".format(num+5) %}
             {% if num < length %}
@@ -92,13 +73,14 @@
                     {% set end = length %}
                 {% endif %}
                 {% for index, row in df[num:end].iterrows() %}
+                    {% if number.append('1') %}{% endif %}
                     <tr class="{{ class_name }}">
-                        <td rowspan="2">{{ index+1 }}</td>
+                        <td rowspan="2">{{ number|length }}</td>
                         <td>{{ row.area }}</td>
                         <td>{{ row.lecture_num }}</td>
                         <td>{{ row.lecture_name }}</td>
                         <td>{{ row.professor }}</td>
-                        <td colspan="4">{{ row.time.replace('\n', '') }}</td> <!--colspan="5"-->
+                        <td colspan="6">{{ row.time.replace('\n', '  ') }}</td>
                     </tr>
                     <tr class="{{ class_name }}">
                         <td>{{ row.credit }}</td>
@@ -119,9 +101,8 @@
                         <td>{{ row.Teamwork }}</td>
                         <td>{{ row.grade_ratio }}</td>
                         <td>{{ row.exam }}</td>
-                        <!--
-                        <td>{{ row.new_info }}</td>
-                         -->
+                        <td>{{ row.new_lecture }}</td>
+                        <td>{{ row.score }}</td>
                     </tr>
                 {% endfor %}
             {% endif %}
