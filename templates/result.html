@@ -14,17 +14,21 @@
         {% if not new_df.empty %}
             <button onclick="new_modalOpen()">신설 강의 정보 더보기</button>
             <div id="new_info_modal">
-                신설 강의
+            
                 <div class="modal_content">
-                    {% if new_length > 10 %}
+                    <p class="modal_p">신설강의(강의정보 없는 신설강의)</p>
+                    <div class="scroll" style="border:solid;overflow:auto; height: 300px;">
+                    <!-- {% if new_length > 10 %}
                         {% set end = 10 %}
                     {% else %}
                         {% set end = new_length %}
-                    {% endif %}
-                    <table>
+                    {% endif %} -->
+                    {% set end = new_length %}
+                    <table class="modal_table">
                         {% set num = [] %}
                         {% for index, row in new_df[0:end].iterrows() %}
-                            {% if num.append('1') %}{% endif %}
+                        {% set end = new_length %}    
+                        <!-- {% if num.append('1') %}{% endif %} -->
                             <tr class="new_df_tr">
                                 <td>{{ num|length }}</td>
                                 <td>{{ row.area }}</td>
@@ -36,14 +40,16 @@
                             </tr>
                         {% endfor %}
                     </table>
-                    <button type="button" id="modal_close_btn" onclick="new_modalClose()">창 닫기</button>
                 </div>
+                    <button type="button" id="modal_close_btn" onclick="new_modalClose()">창 닫기</button>
+                
+            </div>
                 <div class="modal_layer"></div>
             </div>
         {% endif %}
     </div>
     <table>
-        <tr>
+        <tr class="tr1">
             <td rowspan="2">순위</td>
             <td>분류</td>
             <td>학수번호</td>
@@ -51,7 +57,7 @@
             <td>담당교수</td>
             <td colspan="6">시간</td>
         </tr>
-        <tr>
+        <tr class="tr2"> 
             <td>학점</td>
             <td>에타 평점</td>
             <td>에타 URL</td>

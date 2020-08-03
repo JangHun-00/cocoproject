@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/banner.css') }}">
-    <title>강의 추천 프로그램</title>
+    <title>SKKeduler</title>
 </head>
 <body>
     <div id="top">
             <div id="banner">
-                <div style="margin: auto 0;font-family: 'Times New Roman', Times, serif; font-size: 50px;">Learning SKKU</div>
+                <div style="margin: auto 0;font-family: 'Times New Roman', Times, serif; font-size: 50px;"><a href="{{ url_for('index')}}">SKKeduler</a></div>
                 <div></div>
                 <div class="menu_button"><a href="{{ url_for('main')}}">강의 추천</a></div>
                 <div class="menu_button"><a href="{{ url_for('graduate_table')}}">졸업 요건</a></div>
             </div>
     </div>
-    <div id="content" style="width: 60%;">
+    <div id="content">
         {% block contents %}
             <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}">
             <!-- <h1 style="">추천받을 강의에 대한 정보 입력</h1> -->
@@ -48,7 +48,7 @@
                     </select>
                 </div>
                 
-                <div class="content">
+                <div class="content" style="margin-left:15px; margin-top:30px;">
                 <div class="main_radio" id="homework" style="margin-bottom: 20px;">
                     과제량: 
                     <label>

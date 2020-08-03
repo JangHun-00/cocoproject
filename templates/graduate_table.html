@@ -5,8 +5,8 @@
     }
 </style>
 {% block contents %}
-    소속대학별 졸업요건 
-    <div id="content2" style="width: 85%;">
+    <p>소속대학별 졸업요건 </p>
+    <div id="content2">
         <select id="graduate_class" name="graduate_class">
             <option value="" selected disabled>소속 학번</option>
             <option value="20">2020학번</option>
@@ -37,7 +37,7 @@
         </select>
         <button type="button" id="graduate_result_btn" onclick="graduateResult()">졸업요건 확인하기</button>
     </div>
-    <div id="graduate_result" style="width: 915px; text-align: center;">
+    <div id="graduate_result" style="width: 1300px; text-align: center; margin-top: 30px;">
 
     </div>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/graduate.css') }}">

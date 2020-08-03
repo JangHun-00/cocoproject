@@ -18,6 +18,12 @@
     color:white;
     
   }
+  body{
+    background-color: rgb(252, 253, 232);
+    /* background-color: rgb(233, 255, 247); */
+    margin:0px
+  }
+  
   
   /* 페이지 상단의 연결 링크(a 태그) */
   #banner a:link { color: white; text-decoration: none;}

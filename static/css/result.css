@@ -1,25 +1,37 @@
 .upto5 {
     display: table-row;
+    background-color: lavenderblush;
+    margin-bottom: 5px;
 }
 
 .upto10 {
     display: none;
+    background-color: rgb(234, 255, 255);
+    margin-bottom: 5px;
 }
 
 .upto15 {
     display: none;
+    background-color: lavenderblush;
+    margin-bottom: 5px;
 }
 
 .upto20 {
     display: none;
+    background-color: rgb(234, 255, 255);
+    margin-bottom: 5px;
 }
 
 .upto25 {
     display: none;
+    background-color: lavenderblush;
+    margin-bottom: 5px;
 }
 
 .upto30 {
     display: none;
+    background-color: rgb(234, 255, 255);
+    margin-bottom: 5px;
 }
 
 #new_info_modal {
@@ -37,15 +49,32 @@
 #new_info_modal button {
     display:inline-block;
     width:120px;
-    margin-left:calc(100% - 100px - 10px);
+    margin-left:calc(100% - 100px - 30px);
+    margin-top: 10px;
   }
   
 #new_info_modal .modal_content {
-    width:300px;
-    margin:100px auto;
+    width:90%;
+    margin:1% 3%;
     padding:20px 10px;
-    background:#fff;
+    background-color: #fff;
     border:2px solid #666;
+    position: absolute;
+  }
+.modal_table{
+  border-spacing: 32px;
+  /* background-color: rgb(252, 253, 232); */
+  
+}
+  .new_df_tr{
+    margin-bottom: 5px;
+    font-size: 15px;
+  }
+  .modal_p{
+    /* margin-left: 10%; */
+    font-family: HY엽서M;
+    font-size: 30px;
+    text-align: center;
   }
   
 #new_info_modal .modal_layer {
@@ -57,3 +86,40 @@
     background:rgba(0, 0, 0, 0.5);
     z-index:-1;
   }
+
+#content{
+  width: 90%;
+  margin-left: 5%;
+}
+
+.tr1{
+  /* background-color: aquamarine; */
+  height: 40px;
+  text-align: left;
+}
+.tr2{
+  /* background-color: rgb(118, 177, 245); */
+  height: 40px;
+  text-align: left;
+}
+
+table{
+  margin-bottom: 20px;
+  border-spacing: 4px;
+  width: 100%;
+  height: 100px;
+  background-color: white;
+}
+
+
+.modal-table{
+  overflow-y: initial !important
+  }
+  .modal-body{
+  height: 250px;
+  overflow-y: auto;
+  }
+
+.modal_content p{
+  margin-top: 7px;
+}

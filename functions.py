@@ -58,7 +58,7 @@ def calculate_score(major_big, major_small, assign='상관없음', teamwork='상
             score += df.iloc[i]['everytime_rating']
         except:
             score = np.nan
-        data.append(score)
+        data.append(round(score,2))
     df['score'] = pd.Series(data)
     df.dropna(axis=0, inplace = True)
     df.drop('filtered', axis=1, inplace=True)
